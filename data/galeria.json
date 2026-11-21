@@ -1,0 +1,137 @@
+{
+  "fotos": [
+    {
+      "imagen": "images/galeria/gallery5.jpg",
+      "alt": "Brindis",
+      "orden": 1,
+      "formato": "alto"
+    },
+    {
+      "imagen": "images/galeria/gallery4.jpg",
+      "alt": "Mesa de quince años",
+      "orden": 2,
+      "formato": "grande"
+    },
+    {
+      "imagen": "images/galeria/gallery3.jpg",
+      "alt": "Globo de quince años",
+      "orden": 3,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/gallery7.jpg",
+      "alt": "Mesa azul",
+      "orden": 4,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/picnic.jpg",
+      "alt": "Picnic",
+      "orden": 5,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/gallery8.jpg",
+      "alt": "Baby shower",
+      "orden": 6,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/gallery6.jpg",
+      "alt": "Copas decoradas",
+      "orden": 7,
+      "formato": "alto"
+    },
+    {
+      "imagen": "images/galeria/gallery2.jpg",
+      "alt": "Camino de bienvenida",
+      "orden": 8,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/matrimonio.jpg",
+      "alt": "Matrimonio",
+      "orden": 9,
+      "formato": "ancho",
+      "posicion": "50% 32%"
+    },
+    {
+      "imagen": "images/galeria/gallery1.jpg",
+      "alt": "Cumpleaños",
+      "orden": 10,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/ceremonia-flores.jpg",
+      "alt": "Ceremonia entre flores",
+      "orden": 11,
+      "formato": "alto"
+    },
+    {
+      "imagen": "images/galeria/mesa-lazos-dorados.jpg",
+      "alt": "Mesa larga con lazos dorados",
+      "orden": 12,
+      "formato": "ancho"
+    },
+    {
+      "imagen": "images/galeria/pasillo-love.jpg",
+      "alt": "Pasillo de bienvenida LOVE",
+      "orden": 13,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/espejo-bienvenida.jpg",
+      "alt": "Espejo de bienvenida",
+      "orden": 14,
+      "formato": "alto"
+    },
+    {
+      "imagen": "images/galeria/vajilla-dorada.jpg",
+      "alt": "Montaje con vajilla dorada",
+      "orden": 15,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/mesa-quince.jpg",
+      "alt": "Mesa de quince anos",
+      "orden": 16,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/ceremonia-aire-libre.jpg",
+      "alt": "Ceremonia al aire libre",
+      "orden": 17,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/mesa-roja.jpg",
+      "alt": "Mesa roja con globo",
+      "orden": 18,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/mesa-jardin.jpg",
+      "alt": "Mesa larga en el jardin",
+      "orden": 19,
+      "formato": "ancho"
+    },
+    {
+      "imagen": "images/galeria/pareja-altar.jpg",
+      "alt": "Pareja en el altar",
+      "orden": 20,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/centro-rosado.jpg",
+      "alt": "Centro de mesa rosado",
+      "orden": 21,
+      "formato": "normal"
+    },
+    {
+      "imagen": "images/galeria/mesa-redonda.jpg",
+      "alt": "Mesa redonda en el jardin",
+      "orden": 22,
+      "formato": "normal"
+    }
+  ]
+}

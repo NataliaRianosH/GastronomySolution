@@ -1,0 +1,44 @@
+# Configuración de Pages CMS (https://pagescms.org/docs/configuration/)
+media:
+  input: images/galeria
+  output: /images/galeria
+  categories: [image]
+  rename: safe
+
+content:
+  - name: galeria
+    label: Galería de fotos
+    type: file
+    path: data/galeria.json
+    format: json
+    fields:
+      - name: fotos
+        label: Fotos
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{alt}"
+        fields:
+          - name: imagen
+            label: Foto
+            type: image
+            required: true
+          - name: alt
+            label: Texto alternativo (describe la foto)
+            type: string
+            required: true
+          - name: orden
+            label: Orden (1 aparece primero)
+            type: number
+          - name: formato
+            label: Tamaño en la galería
+            type: string
+            description: "Escribe: normal, alto, ancho o grande. Si lo dejas vacío es normal."
+            pattern:
+              regex: "^(normal|alto|ancho|grande)?$"
+              message: "Usa solo: normal, alto, ancho o grande"
+          - name: posicion
+            label: Encuadre (opcional)
+            type: string
+            description: "Avanzado. Ej: 50% 32%. Normalmente se deja vacío."

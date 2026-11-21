@@ -15,9 +15,32 @@ dots.forEach((d,i)=>d.onclick=()=>{go(i);auto()});auto();
 // reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-// lightbox
+// galería: se pinta desde data/galeria.json; si falla, queda el HTML estático de respaldo
+const gal=document.getElementById('gal');
+const FORMATOS={alto:'tall',ancho:'wide',grande:'big'};
+// Acepta rutas guardadas por el CMS como "/images/galeria/x.jpg", "images/galeria/x.jpg" o solo "x.jpg"
+// y las vuelve relativas, para que funcionen bajo /GastronomySolution/ y bajo un dominio propio.
+const rutaImg=r=>{r=String(r||'').trim().replace(/^(\.\/|\/)+/,'');return r.includes('/')?r:'images/galeria/'+r};
+function pintarGaleria(fotos){
+  const html=fotos.filter(f=>f&&f.imagen).map(f=>{
+    const src=rutaImg(f.imagen),cls=FORMATOS[f.formato]||'';
+    const a=document.createElement('a');a.href=src;if(cls)a.className=cls;
+    const img=document.createElement('img');img.loading='lazy';img.src=src;img.alt=f.alt||'';
+    if(f.posicion)img.style.objectPosition=f.posicion;
+    a.appendChild(img);return a;
+  });
+  if(!html.length)return;
+  gal.replaceChildren(...html);
+}
+fetch(gal.dataset.src,{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
+  .then(d=>{
+    const l=(Array.isArray(d)?d:d.fotos)||[];
+    // "orden" ordena de menor a mayor; si falta o hay empates, se respeta el orden de la lista
+    pintarGaleria(l.map((f,i)=>[f,i]).sort((x,y)=>((+x[0].orden)||x[1]+1)-((+y[0].orden)||y[1]+1)||x[1]-y[1]).map(x=>x[0]));
+  }).catch(e=>console.warn('Galería: se usa el respaldo estático',e));
+// lightbox (delegado, funciona con la galería pintada por JS)
 const lb=document.getElementById('lb');
-document.querySelectorAll('.gal a').forEach(a=>a.onclick=e=>{e.preventDefault();lb.querySelector('img').src=a.querySelector('img').src;lb.classList.add('open')});
+gal.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();lb.querySelector('img').src=a.querySelector('img').src;lb.classList.add('open')});
 lb.onclick=()=>lb.classList.remove('open');addEventListener('keydown',e=>e.key==='Escape'&&lb.classList.remove('open'));
 // testimonios
 const ts=[...document.querySelectorAll('.ts')];let ti=0;
